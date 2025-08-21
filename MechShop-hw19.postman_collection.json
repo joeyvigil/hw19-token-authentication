@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "e722e36d-4337-4b10-8936-d9b84bd91fc0",
+		"name": "MechShop-hw19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19738762",
+		"_collection_link": "https://coding-temple-joey.postman.co/workspace/Flask-API~17d0648e-e577-43f8-b74a-a129ea5bb2ce/collection/19738762-e722e36d-4337-4b10-8936-d9b84bd91fc0?action=share&source=collection_link&creator=19738762"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"name@email.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/mechanics/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"mechanics",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU2ODc2MDgsImlhdCI6MTc1NTY4NDAwOCwic3ViIjoiMiJ9.E335QDCjaUL_7_wFxtylBvsFT-XxknUCTJbiq4-0XcU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "id",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:5000/mechanics/profile",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"mechanics",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

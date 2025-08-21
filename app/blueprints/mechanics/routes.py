@@ -52,14 +52,16 @@ def read_mechanics():
     mechanics = db.session.query(Mechanics).all()
     return mechanics_schema.jsonify(mechanics), 200
 
-#-------------------------- FIX  DOESNT WORK -----------------------------------
-# @mechanics_bp.route('/profile', methods=['GET'])
-# @token_required
-# def read_user():
-#     print(request)
-#     mechanic_id = request.id
-#     mechanic = db.session.get(Mechanics, mechanic_id)
-#     return mechanic_schema.jsonify(mechanic), 200
+
+@mechanics_bp.route('/profile', methods=['GET'])
+@token_required
+def read_user():
+    mechanic_id = request.mechanic_id # type: ignore 
+    #wow, the encoded request token contains the ID for the user?
+    mechanic = db.session.get(Mechanics, mechanic_id)
+    return mechanic_schema.jsonify(mechanic), 200
+
+# NEED GET '/my-tickets': at end of by end of project as stated in HW19(optional)
 
 
 # GET at id

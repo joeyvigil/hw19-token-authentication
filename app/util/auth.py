@@ -30,7 +30,7 @@ def token_required(f):
         
         try:
             data = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-            request.mechanic_id = int(data['sub'])  
+            request.mechanic_id = int(data['sub'])   # type: ignore
             
         except jose.exceptions.ExpiredSignatureError:
             return jsonify({'message': 'token is expired'}), 403
